@@ -1,7 +1,8 @@
-package com.nissan.repo;
-
+package com.nissan.dto;
 
 public class UserDetailsDTO {
+	
+
 
 	private String firstName;
 

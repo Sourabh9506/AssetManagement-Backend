@@ -1,11 +1,12 @@
 package com.nissan.service;
 
+
 import java.util.List;
 
 import com.nissan.model.AssetDefinition;
 import com.nissan.model.AssetType;
 import com.nissan.model.VendorCreation;
-import com.nissan.repo.IVendorCreationRepo;
+import com.nissan.dao.IVendorCreationRepo;
 
 
 

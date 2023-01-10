@@ -3,17 +3,20 @@ package com.nissan.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.nissan.common.APIResponse;
 import com.nissan.dao.LoginDao;
 import com.nissan.dao.UserDao;
+import com.nissan.dto.LoginDTO;
 import com.nissan.model.Login;
-import com.nissan.repo.LoginDTO;
+import com.nissan.model.UserType;
 import com.nissan.util.JwtUtils;
+
 
 @Service
 @Transactional
@@ -78,7 +81,6 @@ public class LoginServiceImpl implements ILoginService {
 	public APIResponse login(LoginDTO login) {
 		APIResponse apiResponse = new APIResponse();
 		Login user=loginDao.findByUsernameAndPassword(loginDTO.getUsername(),loginDTO.getPassword());  // avoided either use Autowired --- anonymous
-
         if(user==null) {
             apiResponse.setData("User login failed");
             return apiResponse;
@@ -89,11 +91,10 @@ public class LoginServiceImpl implements ILoginService {
       		//Store more details
       		Map<String, Object> data = new HashMap<>();
       		data.put("accessToken", token);
-      		data.put("UserType", user.userType.getUserType());
+      		data.put("UserType",user.userType.getUserType();
     		data.put("UserName", user.getUsername());
       		
       		apiResponse.setData(data);
       		return apiResponse;
 	}
-
 }

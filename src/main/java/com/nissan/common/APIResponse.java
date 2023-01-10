@@ -4,10 +4,9 @@ import org.springframework.http.HttpStatus;
 
 
 
-
 public class APIResponse {
 
-	private Integer status;		// 200, 401.....
+	private Integer status;		   // 200, 401.....
 	
 	private Object data;			// emailId, roleId
 	
@@ -40,5 +39,6 @@ public class APIResponse {
 	public void setError(Object error) {
 		this.error = error;
 	}
+	
 	
 }

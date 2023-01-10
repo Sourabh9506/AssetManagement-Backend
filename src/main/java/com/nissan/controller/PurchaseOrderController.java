@@ -13,52 +13,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nissan.common.APIResponse;
-import com.nissan.dto.UserDetailsDTO;
-import com.nissan.service.IUserService;
+import com.nissan.model.PurchaseOrderCreation;
+import com.nissan.service.IPurchaseOrderCreationService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/users")
-public class UserController {
+@RequestMapping("/api/purchaseOrder")
+public class PurchaseOrderController {
 	
-
 	@Autowired
-	private IUserService userService;
+	private IPurchaseOrderCreationService purchaseOrderService;
 	
 	private APIResponse apiResponse;
 	
-	// get all users
 	@GetMapping
-	public ResponseEntity<APIResponse> getAllUsers() {
-		apiResponse = userService.getAllUsers();
+	public ResponseEntity<APIResponse> getAllPurchaseOrders(){
+		apiResponse=purchaseOrderService.getAllPurchaseOrders();
 		return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
 	}
 	
-	// get user by ID 
 	@GetMapping("{id}")
-	public ResponseEntity<APIResponse> getUserById(@PathVariable Integer id) {
-		apiResponse = userService.findUserById(id);
+	public ResponseEntity<APIResponse> findPurchaseOrderById(@PathVariable Integer id){
+		apiResponse=purchaseOrderService.findPurchaseOrderById(id);
 		return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
 	}
 	
-	// post details using login id of the user
 	@PostMapping("{id}")
-	public ResponseEntity<APIResponse> addUserDetails(@RequestBody UserDetailsDTO userDetailsDTO, @PathVariable Integer id) {
-		apiResponse = userService.addUserDetails(userDetailsDTO, id);
+	public ResponseEntity<APIResponse> addPurchaseOrderDetails(@RequestBody PurchaseOrderCreation purchaseOrderCreation){
+		apiResponse = purchaseOrderService.addPurchaseOrderDetails(purchaseOrderCreation);
 		return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
 	}
-	
-	// delete user using user id 
 	@DeleteMapping("{id}")
-	public ResponseEntity<APIResponse> deleteUser(@PathVariable Integer id) {
-		apiResponse = userService.deleteUserbyId(id);
+	public ResponseEntity<APIResponse> deletePurchaseOrderById(@PathVariable Integer id){
+		apiResponse=purchaseOrderService.deletePurchaseOrderById(id);
 		return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
 	}
-	
-	// update details of a user
 	@PutMapping("{id}")
-	public ResponseEntity<APIResponse> updateUserDetails(@RequestBody UserDetailsDTO userDetailsDTO, @PathVariable Integer id) {
-		apiResponse = userService.updateUserDetailsById(userDetailsDTO, id);
+	public ResponseEntity<APIResponse> updatePurchaseOrderById(@RequestBody PurchaseOrderCreation purchaseOrderCreation,@PathVariable Integer id){
+		apiResponse=purchaseOrderService.updatePurchaseOrderById(purchaseOrderCreation,id);
 		return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
 	}
 

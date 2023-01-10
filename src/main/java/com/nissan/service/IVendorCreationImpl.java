@@ -6,11 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.nissan.model.AssetType;
-
+import com.nissan.dao.IAssetDefinitionRepo;
+import com.nissan.dao.IVendorCreationRepo;
 import com.nissan.model.VendorCreation;
-import com.nissan.repo.IAssetDefinitionRepo;
-import com.nissan.repo.IVendorCreationRepo;
 
 @Service
 public class IVendorCreationImpl implements IVendorCreationService {

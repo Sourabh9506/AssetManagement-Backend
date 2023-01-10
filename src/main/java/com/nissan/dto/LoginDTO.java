@@ -1,8 +1,7 @@
-package com.nissan.repo;
-
-
+package com.nissan.dto;
 
 public class LoginDTO {
+
 
 	private String username;
 	
@@ -39,5 +38,9 @@ public class LoginDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
+	
 	
 }

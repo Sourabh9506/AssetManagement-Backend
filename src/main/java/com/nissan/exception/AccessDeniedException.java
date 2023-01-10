@@ -1,4 +1,4 @@
-package com.nissan.common;
+package com.nissan.exception;
 
 @SuppressWarnings("serial")
 public class AccessDeniedException extends Exception {
