@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.nissan.dao.IAssetDefinitionRepo;
 import com.nissan.model.AssetDefinition;
-import com.nissan.repo.IAssetDefinitionRepo;
 
 @Service
 public class IAssetDefinitionService implements IAssetDefinitionImpl {

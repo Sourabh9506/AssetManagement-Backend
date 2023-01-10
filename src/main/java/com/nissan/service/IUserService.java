@@ -1,7 +1,7 @@
 package com.nissan.service;
 
 import com.nissan.common.APIResponse;
-import com.nissan.repo.UserDetailsDTO;
+import com.nissan.dto.UserDetailsDTO;
 
 public interface IUserService {
 	

@@ -9,8 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.nissan.common.APIResponse;
 import com.nissan.dao.UserDao;
-import com.nissan.repo.UserDetailsDTO;
-import com.nissan.model.UserRegistration;
+import com.nissan.dto.UserDetailsDTO;
+import com.nissan.model.UserRegistration;;
 
 @Service
 @Transactional

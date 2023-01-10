@@ -1,4 +1,4 @@
-package com.nissan.repo;
+package com.nissan.dao;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;

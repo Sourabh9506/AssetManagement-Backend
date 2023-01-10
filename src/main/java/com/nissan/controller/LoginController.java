@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nissan.common.APIResponse;
+import com.nissan.dto.LoginDTO;
 import com.nissan.model.Login;
-import com.nissan.repo.LoginDTO;
-import com.nissan.repo.UserDTO;
-//import com.nissan.repo.UserDetailsDTO;
 import com.nissan.service.ILoginService;
 
 @CrossOrigin

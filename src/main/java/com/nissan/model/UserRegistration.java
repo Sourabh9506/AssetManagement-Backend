@@ -1,5 +1,6 @@
 package com.nissan.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -36,6 +38,7 @@ public class UserRegistration {
 	
 	@OneToOne
 	@JoinColumn(name = "l_id", insertable = false, updatable = false)
+	@JsonIgnore
 	private Login login;
 
 	// constructor 
